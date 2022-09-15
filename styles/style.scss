@@ -1,8 +1,10 @@
 $font-stack: 'DM Sans';
 $light-color: hsl(180, 65%, 73%);
-$light-color: #f4f4f4;
+$bg-color: #f4f4f4;
 $primary-color: #0e6cff;
 $secondary-color: #ff8700;
+$dark-color: #000000;
+
 
 * {
   margin: 0;
@@ -11,7 +13,7 @@ $secondary-color: #ff8700;
 }
 
 body {
-  background-color: $light-color;
+  background-color: $bg-color;
   font-family: $font-stack;
   line-height: 1.6;
 }
@@ -33,9 +35,13 @@ nav {
   }
 
   a {
-    color: set-text-color($primary-color);
+    color: $dark-color;
     text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
   }
+}
 }
 
 img {
@@ -46,18 +52,14 @@ img {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin: 30px;
-  margin-right: 50px;
-}
+  margin: 0 50px 30px 50px;
 
-.card {
-  padding: 24px;
-  text-align: left;
-
-  background: white;
-
-  border: 1px solid cyan;
-  border-radius: 0.6px;
+  .card {
+    padding: 26px;
+    text-align: left;  
+    border: 1px solid $light-color;
+    border-radius: 0.6px;
+  }
 }
 
 .iphone{
@@ -70,35 +72,34 @@ section.main {
   gap: 40px;
   align-items: center;
   text-align: center;
-}
 
-section.main h4 {
-  font-size: 26px;
-}
+  h4 {
+    font-size: 26px;
+  }
 
-section.main h1 {
-  font-size: 45px;
-}
+  h1 {
+    font-size: 45px;
+  }
 
-section.main p {
+  p {
   margin: 0 30px 0 30px;
   font-size: 15px;
 }
-
+}
 
 
 button {
-  background: black;
+  background: $dark-color;
 
   border: none;
   border-radius: 4px;
 
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 
   padding: 16px 32px;
   width: fit-content;
 
-  color: white;
+  color: $bg-color;
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -109,21 +110,36 @@ button {
   gap: 16px;
 
   text-decoration: none;
-}
+
+  &:hover {
+    background: $bg-color;
+    color: $dark-color;
+    border: 1px solid $dark-color;
+    margin-bottom: 6px;
+  }
+  }
+
+
+
 
 section.about {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  header {
+    margin: 0 30px 0 30px;
+  }
+  
+  h2 {
+    margin: 50px 0 20px 0;
+  }
+
+  p{
+    margin-top: 30px;
+  }
 }
 
-section header {
-  margin: 0 30px 0 30px;
-}
-
-section header h2 {
-  margin: 50px 0 20px 0;
-}
 
 .stevejobs {
   max-width: 70%;
@@ -132,12 +148,20 @@ section header h2 {
 
 .content {
   margin: 0 30px 0 30px;
-  display: flex;
+
+  ul{
+    list-style: none;
+    margin: 50px 0 30px 0;
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
 }
 
-.content ul{
-  list-style: none;
-  margin: 50px 0 30px 0;
-}
+
 
 

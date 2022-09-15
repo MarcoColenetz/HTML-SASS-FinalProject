@@ -25,8 +25,11 @@ nav li {
   padding: 15px;
 }
 nav a {
-  color: set-text-color(#0e6cff);
+  color: #000000;
   text-decoration: none;
+}
+nav a:hover {
+  color: #0e6cff;
 }
 
 img {
@@ -37,15 +40,12 @@ img {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin: 30px;
-  margin-right: 50px;
+  margin: 0 50px 30px 50px;
 }
-
-.card {
-  padding: 24px;
+.cards .card {
+  padding: 26px;
   text-align: left;
-  background: white;
-  border: 1px solid cyan;
+  border: 1px solid hsl(180deg, 65%, 73%);
   border-radius: 0.6px;
 }
 
@@ -60,28 +60,27 @@ section.main {
   align-items: center;
   text-align: center;
 }
-
 section.main h4 {
   font-size: 26px;
 }
-
 section.main h1 {
   font-size: 45px;
 }
-
 section.main p {
   margin: 0 30px 0 30px;
   font-size: 15px;
 }
 
 button {
-  background: black;
+  background: #000000;
   border: none;
   border-radius: 4px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   padding: 16px 32px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  color: white;
+  color: #f4f4f4;
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -91,19 +90,26 @@ button {
   gap: 16px;
   text-decoration: none;
 }
+button:hover {
+  background: #f4f4f4;
+  color: #000000;
+  border: 1px solid #000000;
+  margin-bottom: 6px;
+}
 
 section.about {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-
-section header {
+section.about header {
   margin: 0 30px 0 30px;
 }
-
-section header h2 {
+section.about h2 {
   margin: 50px 0 20px 0;
+}
+section.about p {
+  margin-top: 30px;
 }
 
 .stevejobs {
@@ -113,12 +119,13 @@ section header h2 {
 
 .content {
   margin: 0 30px 0 30px;
-  display: flex;
 }
-
 .content ul {
   list-style: none;
   margin: 50px 0 30px 0;
 }
-
-/*# sourceMappingURL=style.css.map */
+.content ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}/*# sourceMappingURL=style.css.map */
