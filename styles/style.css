@@ -38,15 +38,59 @@ img {
 
 .cards {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin: 0 50px 30px 50px;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .cards .card {
-  padding: 26px;
+  justify-content: "center";
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+  max-width: 300px;
+  padding: 24px;
+  margin: 0 12px 12px 12px;
   text-align: left;
-  border: 1px solid hsl(180deg, 65%, 73%);
-  border-radius: 0.6px;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+}
+@media screen and (max-width: 665px) {
+  .cards .card {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 665px) {
+  .cards .card:hover {
+    transform: scale(1.1);
+  }
+}
+.cards .review {
+  justify-content: "center";
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+  max-width: 500px;
+  padding: 24px;
+  margin: 0 12px 12px 12px;
+  text-align: left;
+  background-color: white;
+  border-radius: 8px;
+}
+.cards .review .profile-pic {
+  margin-bottom: 16px;
+  display: block;
+  height: 80px;
+}
+.cards .review .stars {
+  max-width: 100px;
+}
+@media screen and (max-width: 665px) {
+  .cards .review {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 665px) {
+  .cards .review:hover {
+    transform: scale(1.1);
+  }
 }
 
 .iphone {
@@ -72,10 +116,11 @@ section.main p {
 }
 
 button {
+  transition: all 0.5s;
+  cursor: pointer;
   background: #000000;
-  border: none;
+  border: 1px solid #000000;
   border-radius: 4px;
-  margin-bottom: 8px;
   padding: 16px 32px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -87,14 +132,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
   text-decoration: none;
 }
 button:hover {
   background: #f4f4f4;
   color: #000000;
-  border: 1px solid #000000;
-  margin-bottom: 6px;
 }
 
 section.about {
@@ -109,6 +151,21 @@ section.about h2 {
   margin: 50px 0 20px 0;
 }
 section.about p {
+  margin-top: 30px;
+}
+
+section.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.reviews header {
+  margin: 0 30px 0 30px;
+}
+section.reviews h2 {
+  margin: 50px 0 20px 0;
+}
+section.reviews p {
   margin-top: 30px;
 }
 
